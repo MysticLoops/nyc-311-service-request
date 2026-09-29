@@ -1,0 +1,86 @@
+# =========================
+# Large datasets
+# =========================
+data/raw/
+data/processed/
+*.csv
+*.tsv
+*.csv.gz
+*.tsv.gz
+*.parquet
+*.orc
+
+# =========================
+# Local transfer data
+# =========================
+nyc311_transfer/
+*_transfer/
+
+# =========================
+# Hadoop / HDFS
+# =========================
+hdfs/
+hadoop-data/
+yarn-data/
+nm-local-dir/
+*.pid
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+
+# =========================
+# Hive
+# =========================
+metastore_db/
+derby.log
+*.lck
+
+# =========================
+# Spark
+# =========================
+spark-warehouse/
+checkpoints/
+checkpoint/
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# =========================
+# IDE
+# =========================
+.idea/
+.vscode/
+*.swp
+
+# =========================
+# OS
+# =========================
+.DS_Store
+
+# =========================
+# Environment / secrets
+# =========================
+.env
+*.key
+*.pem
+credentials.json
+
+# =========================
+# Generated outputs
+# =========================
+output/*
+!output/.gitkeep
+
+# Keep small sample datasets
+!data/sample/
+!data/sample/*.csv
+!data/sample/*.json
