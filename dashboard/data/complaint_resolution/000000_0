@@ -1,0 +1,715 @@
+AHV Inspection Unit,FAST,134
+AHV Inspection Unit,MODERATE,124
+AHV Inspection Unit,SLOW,521
+APPLIANCE,FAST,2445
+APPLIANCE,MODERATE,11897
+APPLIANCE,SLOW,117952
+ASBESTOS,FAST,1
+Abandoned Bike,FAST,1268
+Abandoned Bike,MODERATE,3218
+Abandoned Bike,SLOW,5955
+Abandoned Vehicle,FAST,390710
+Abandoned Vehicle,MODERATE,4464
+Abandoned Vehicle,SLOW,949
+Adopt-A-Basket,FAST,33
+Adopt-A-Basket,MODERATE,21
+Adopt-A-Basket,SLOW,139
+Air Quality,FAST,25850
+Air Quality,MODERATE,19545
+Air Quality,SLOW,19291
+Animal Facility - No Permit,MODERATE,1
+Animal Facility - No Permit,SLOW,36
+Animal in a Park,FAST,25900
+Animal in a Park,MODERATE,712
+Animal in a Park,SLOW,3207
+Animal-Abuse,FAST,56875
+Animal-Abuse,MODERATE,422
+Animal-Abuse,SLOW,61
+Appliance,FAST,16
+Appliance,MODERATE,46
+Appliance,SLOW,320
+Asbestos,FAST,6187
+Asbestos,MODERATE,1012
+Asbestos,SLOW,2117
+BEST/Site Safety,FAST,1145
+BEST/Site Safety,MODERATE,496
+BEST/Site Safety,SLOW,501
+Beach/Pool/Sauna Complaint,FAST,223
+Beach/Pool/Sauna Complaint,MODERATE,268
+Beach/Pool/Sauna Complaint,SLOW,793
+Bench,FAST,61
+Bench,MODERATE,45
+Bench,SLOW,152
+Bike Rack,FAST,234
+Bike Rack,MODERATE,140
+Bike Rack,SLOW,857
+Bike Rack Condition,FAST,56
+Bike Rack Condition,MODERATE,61
+Bike Rack Condition,SLOW,642
+Bike/Roller/Skate,FAST,1732
+Bike/Roller/Skate,MODERATE,13
+Bike/Roller/Skate Chronic,FAST,14616
+Bike/Roller/Skate Chronic,MODERATE,28
+Bike/Roller/Skate Chronic,SLOW,4
+Blocked Driveway,FAST,1066622
+Blocked Driveway,MODERATE,6730
+Blocked Driveway,SLOW,1183
+Boiler,MODERATE,1
+Boiler,SLOW,20
+Boilers,FAST,1500
+Boilers,MODERATE,3677
+Boilers,SLOW,12490
+Borough Office,FAST,3
+Borough Office,MODERATE,8
+Borough Office,SLOW,128
+Bottled Water,FAST,1
+Bottled Water,MODERATE,9
+Bottled Water,SLOW,21
+Bridge Condition,FAST,1
+Bridge Condition,MODERATE,1
+Bridge Condition,SLOW,10
+Broken Parking Meter,FAST,11281
+Broken Parking Meter,MODERATE,6135
+Broken Parking Meter,SLOW,12074
+Building Condition,FAST,25
+Building Condition,MODERATE,13
+Building Condition,SLOW,17
+Building Drinking Water Tank,FAST,28
+Building Drinking Water Tank,MODERATE,35
+Building Drinking Water Tank,SLOW,123
+Building Marshal's Office,FAST,1
+Building Marshal's Office,MODERATE,5
+Building Marshal's Office,SLOW,17
+Building Marshals office,FAST,2
+Building Marshals office,MODERATE,5
+Building Marshals office,SLOW,9
+Building/Use,FAST,7579
+Building/Use,MODERATE,5090
+Building/Use,SLOW,77906
+Bus Stop Shelter Complaint,FAST,1147
+Bus Stop Shelter Complaint,MODERATE,1220
+Bus Stop Shelter Complaint,SLOW,5550
+Bus Stop Shelter Placement,FAST,683
+Bus Stop Shelter Placement,MODERATE,293
+Bus Stop Shelter Placement,SLOW,285
+COVID-19 Non-essential Construction,FAST,1746
+COVID-19 Non-essential Construction,MODERATE,418
+COVID-19 Non-essential Construction,SLOW,364
+Calorie Labeling,SLOW,13
+Cannabis Retailer,FAST,56
+Cannabis Retailer,MODERATE,48
+Cannabis Retailer,SLOW,3592
+Change Collection Schedule,FAST,1
+Collection Truck Noise,FAST,160
+Collection Truck Noise,MODERATE,153
+Collection Truck Noise,SLOW,103
+Commercial Disposal Complaint,FAST,4680
+Commercial Disposal Complaint,MODERATE,3490
+Commercial Disposal Complaint,SLOW,3595
+Construction Lead Dust,SLOW,1
+Construction Safety Enforcement,FAST,1
+Construction Safety Enforcement,MODERATE,1
+Construction Safety Enforcement,SLOW,12
+Consumer Complaint,FAST,48342
+Consumer Complaint,MODERATE,48386
+Consumer Complaint,SLOW,47732
+Cooling Tower,FAST,20
+Cooling Tower,MODERATE,23
+Cooling Tower,SLOW,134
+Cranes and Derricks,FAST,241
+Cranes and Derricks,MODERATE,71
+Cranes and Derricks,SLOW,46
+Curb Condition,FAST,623
+Curb Condition,MODERATE,1244
+Curb Condition,SLOW,42531
+DEP Highway Condition,FAST,1
+DEP Highway Condition,SLOW,3
+DEP Sidewalk Condition,FAST,1
+DEP Sidewalk Condition,MODERATE,8
+DEP Sidewalk Condition,SLOW,10
+DEP Street Condition,FAST,91
+DEP Street Condition,MODERATE,168
+DEP Street Condition,SLOW,389
+DOB Posted Notice or Order,MODERATE,2
+DOB Posted Notice or Order,SLOW,1
+DOOR/WINDOW,FAST,5303
+DOOR/WINDOW,MODERATE,29340
+DOOR/WINDOW,SLOW,235912
+DSNY Internal,FAST,4
+DSNY Internal,MODERATE,2
+DSNY Internal,SLOW,6
+DSNY Spillage,FAST,1
+DSNY Spillage,MODERATE,1
+DSNY Spillage,SLOW,2
+Damaged Tree,FAST,33703
+Damaged Tree,MODERATE,34277
+Damaged Tree,SLOW,117657
+Day Care,FAST,6
+Day Care,MODERATE,2884
+Day Care,SLOW,1025
+Dead Animal,FAST,9020
+Dead Animal,MODERATE,21636
+Dead Animal,SLOW,19145
+Dead/Dying Tree,FAST,4954
+Dead/Dying Tree,MODERATE,4920
+Dead/Dying Tree,SLOW,31017
+Dept of Investigations,FAST,68
+Dept of Investigations,MODERATE,35
+Dept of Investigations,SLOW,34
+Derelict Bicycle,FAST,929
+Derelict Bicycle,MODERATE,939
+Derelict Bicycle,SLOW,705
+Derelict Vehicles,FAST,135893
+Derelict Vehicles,MODERATE,98607
+Derelict Vehicles,SLOW,27193
+Dirty Condition,FAST,111672
+Dirty Condition,MODERATE,94299
+Dirty Condition,SLOW,67496
+Dirty Conditions,FAST,12209
+Dirty Conditions,MODERATE,21253
+Dirty Conditions,SLOW,29141
+Disorderly Youth,FAST,1765
+Disorderly Youth,MODERATE,8
+Dispatched Taxi Complaint,MODERATE,2
+Dispatched Taxi Complaint,SLOW,37
+Dispatched Taxi Compliment,FAST,1
+Dispatched Taxi Compliment,SLOW,1
+Door/Window,FAST,38
+Door/Window,MODERATE,123
+Door/Window,SLOW,777
+Drinking,FAST,24938
+Drinking,MODERATE,87
+Drinking,SLOW,10
+Drinking Water,FAST,215
+Drinking Water,MODERATE,328
+Drinking Water,SLOW,1147
+Drug Activity,FAST,87066
+Drug Activity,MODERATE,158
+Drug Activity,SLOW,21
+Dumpster Complaint,FAST,1244
+Dumpster Complaint,MODERATE,3334
+Dumpster Complaint,SLOW,4812
+E-Scooter,FAST,877
+E-Scooter,MODERATE,742
+E-Scooter,SLOW,577
+ELECTRIC,FAST,9818
+ELECTRIC,MODERATE,33468
+ELECTRIC,SLOW,133825
+ELEVATOR,FAST,196
+ELEVATOR,MODERATE,929
+ELEVATOR,SLOW,9824
+Electric,FAST,48
+Electric,MODERATE,55
+Electric,SLOW,137
+Electrical,FAST,1451
+Electrical,MODERATE,3559
+Electrical,SLOW,8412
+Electronics Waste,MODERATE,1
+Electronics Waste Appointment,FAST,595
+Electronics Waste Appointment,MODERATE,17622
+Electronics Waste Appointment,SLOW,14344
+Elevator,FAST,9708
+Elevator,MODERATE,11249
+Elevator,SLOW,94677
+Emergency Response Team (ERT),FAST,3921
+Emergency Response Team (ERT),MODERATE,3918
+Emergency Response Team (ERT),SLOW,11886
+Employee Behavior,FAST,2
+Employee Behavior,MODERATE,1
+Employee Behavior,SLOW,1
+Encampment,FAST,195225
+Encampment,MODERATE,9300
+Encampment,SLOW,19092
+Executive Inspections,MODERATE,2
+Executive Inspections,SLOW,6
+FHV Licensee Complaint,MODERATE,3
+FHV Licensee Complaint,SLOW,31
+FLOORING/STAIRS,FAST,3931
+FLOORING/STAIRS,MODERATE,18538
+FLOORING/STAIRS,SLOW,137199
+Facade Insp Safety Pgm,SLOW,2
+Facades,SLOW,3
+Face Covering Violation,FAST,1522
+Face Covering Violation,MODERATE,213
+Ferry Complaint,FAST,1
+Ferry Complaint,MODERATE,2
+Ferry Complaint,SLOW,5
+Ferry Inquiry,FAST,2
+Ferry Inquiry,MODERATE,1
+Ferry Inquiry,SLOW,3
+Flooring/Stairs,FAST,27
+Flooring/Stairs,MODERATE,77
+Flooring/Stairs,SLOW,423
+Foam Ban Enforcement,FAST,1
+Foam Ban Enforcement,MODERATE,2
+Foam Ban Enforcement,SLOW,8
+Food Establishment,FAST,196
+Food Establishment,MODERATE,148
+Food Establishment,SLOW,30268
+Food Poisoning,FAST,2587
+Food Poisoning,MODERATE,5130
+Food Poisoning,SLOW,6485
+For Hire Vehicle Complaint,FAST,596
+For Hire Vehicle Complaint,MODERATE,1246
+For Hire Vehicle Complaint,SLOW,70603
+For Hire Vehicle Report,FAST,35
+For Hire Vehicle Report,MODERATE,65
+For Hire Vehicle Report,SLOW,263
+Found Property,FAST,8
+Found Property,MODERATE,4
+Found Property,SLOW,1
+GENERAL,FAST,4521
+GENERAL,MODERATE,17796
+GENERAL,SLOW,164315
+General,FAST,24
+General,MODERATE,66
+General,SLOW,371
+General Construction/Plumbing,FAST,49672
+General Construction/Plumbing,MODERATE,30160
+General Construction/Plumbing,SLOW,114646
+Graffiti,FAST,18233
+Graffiti,MODERATE,6131
+Graffiti,SLOW,51074
+Green Infrastructure,MODERATE,4
+Green Infrastructure,SLOW,145
+Green Taxi Complaint,FAST,139
+Green Taxi Complaint,MODERATE,258
+Green Taxi Complaint,SLOW,976
+Green Taxi Report,FAST,2
+Green Taxi Report,MODERATE,1
+Green Taxi Report,SLOW,15
+HEAT/HOT WATER,FAST,417827
+HEAT/HOT WATER,MODERATE,871920
+HEAT/HOT WATER,SLOW,345353
+Harboring Bees/Wasps,FAST,29
+Harboring Bees/Wasps,MODERATE,38
+Harboring Bees/Wasps,SLOW,21
+Hazardous Material,FAST,372
+Hazardous Material,MODERATE,12
+Hazardous Material,SLOW,44
+Hazardous Materials,FAST,11401
+Hazardous Materials,MODERATE,347
+Hazardous Materials,SLOW,578
+Heat/Hot Water,FAST,619
+Heat/Hot Water,MODERATE,688
+Heat/Hot Water,SLOW,150
+Highway Condition,FAST,20
+Highway Condition,MODERATE,25
+Highway Condition,SLOW,39
+Highway Sign - Damaged,FAST,2
+Highway Sign - Damaged,MODERATE,2
+Highway Sign - Damaged,SLOW,8
+Highway Sign - Dangling,MODERATE,1
+Highway Sign - Dangling,SLOW,1
+Homeless Encampment,FAST,172
+Homeless Person Assistance,FAST,151821
+Homeless Person Assistance,MODERATE,13155
+Homeless Person Assistance,SLOW,14300
+Homeless Street Condition,FAST,15098
+Homeless Street Condition,MODERATE,21
+Homeless Street Condition,SLOW,7
+Illegal Animal Kept as Pet,FAST,14
+Illegal Animal Kept as Pet,MODERATE,11
+Illegal Animal Kept as Pet,SLOW,172
+Illegal Animal Sold,FAST,10
+Illegal Animal Sold,MODERATE,8
+Illegal Animal Sold,SLOW,41
+Illegal Dumping,FAST,24182
+Illegal Dumping,MODERATE,60748
+Illegal Dumping,SLOW,88436
+Illegal Fireworks,FAST,115985
+Illegal Fireworks,MODERATE,264
+Illegal Fireworks,SLOW,7
+Illegal Parking,FAST,2882944
+Illegal Parking,MODERATE,13205
+Illegal Parking,SLOW,1802
+Illegal Posting,FAST,4356
+Illegal Posting,MODERATE,7685
+Illegal Posting,SLOW,8877
+Illegal Tree Damage,FAST,2626
+Illegal Tree Damage,MODERATE,3138
+Illegal Tree Damage,SLOW,17589
+Incorrect Data,FAST,91
+Incorrect Data,MODERATE,79
+Incorrect Data,SLOW,169
+Indoor Air Quality,FAST,31714
+Indoor Air Quality,MODERATE,11960
+Indoor Air Quality,SLOW,4015
+Indoor Sewage,FAST,982
+Indoor Sewage,MODERATE,474
+Indoor Sewage,SLOW,1930
+Industrial Waste,FAST,3539
+Industrial Waste,MODERATE,584
+Industrial Waste,SLOW,979
+Institution Disposal Complaint,FAST,60
+Institution Disposal Complaint,MODERATE,80
+Institution Disposal Complaint,SLOW,130
+Internal Code,MODERATE,3
+Internal Code,SLOW,15
+Investigations and Discipline (IAD),FAST,740
+Investigations and Discipline (IAD),MODERATE,875
+Investigations and Discipline (IAD),SLOW,1952
+Lead,FAST,34307
+Lead,MODERATE,30777
+Lead,SLOW,20203
+Leaning Bar,SLOW,12
+Lifeguard,FAST,35
+Lifeguard,MODERATE,36
+Lifeguard,SLOW,115
+LinkNYC,FAST,55
+LinkNYC,MODERATE,83
+LinkNYC,SLOW,802
+Litter Basket / Request,FAST,1193
+Litter Basket / Request,MODERATE,1526
+Litter Basket / Request,SLOW,894
+Litter Basket Complaint,FAST,1414
+Litter Basket Complaint,MODERATE,2294
+Litter Basket Complaint,SLOW,3606
+Litter Basket Request,FAST,2309
+Litter Basket Request,MODERATE,5617
+Litter Basket Request,SLOW,10401
+Lost Property,FAST,18647
+Lost Property,MODERATE,13094
+Lost Property,SLOW,7671
+Lot Condition,FAST,421
+Lot Condition,MODERATE,439
+Lot Condition,SLOW,2634
+MOLD,SLOW,1
+Maintenance or Facility,FAST,12818
+Maintenance or Facility,MODERATE,12135
+Maintenance or Facility,SLOW,88107
+Mass Gathering Complaint,FAST,3624
+Mass Gathering Complaint,MODERATE,1
+Miscellaneous Categories,SLOW,6
+Missed Collection,FAST,23466
+Missed Collection,MODERATE,84504
+Missed Collection,SLOW,138669
+Missed Collection (All Materials),FAST,17430
+Missed Collection (All Materials),MODERATE,37571
+Missed Collection (All Materials),SLOW,25789
+Mobile Food Vendor,MODERATE,6
+Mobile Food Vendor,SLOW,9531
+Mold,FAST,1440
+Mold,MODERATE,577
+Mold,SLOW,151
+Mosquitoes,FAST,2524
+Mosquitoes,SLOW,363
+Municipal Parking Facility,FAST,13
+Municipal Parking Facility,MODERATE,17
+Municipal Parking Facility,SLOW,38
+New Tree Request,FAST,551
+New Tree Request,MODERATE,643
+New Tree Request,SLOW,15780
+Noise,FAST,95723
+Noise,MODERATE,96151
+Noise,SLOW,149200
+Noise - Commercial,FAST,394404
+Noise - Commercial,MODERATE,654
+Noise - Commercial,SLOW,113
+Noise - Helicopter,FAST,1641
+Noise - Helicopter,MODERATE,188
+Noise - Helicopter,SLOW,83537
+Noise - House of Worship,FAST,11016
+Noise - House of Worship,MODERATE,5
+Noise - House of Worship,SLOW,2
+Noise - Park,FAST,56538
+Noise - Park,MODERATE,100
+Noise - Park,SLOW,15
+Noise - Residential,FAST,2442144
+Noise - Residential,MODERATE,31528
+Noise - Residential,SLOW,28605
+Noise - Street/Sidewalk,FAST,1137892
+Noise - Street/Sidewalk,MODERATE,2506
+Noise - Street/Sidewalk,SLOW,342
+Noise - Vehicle,FAST,399353
+Noise - Vehicle,MODERATE,921
+Noise - Vehicle,SLOW,201
+Non-Emergency Police Matter,FAST,199682
+Non-Emergency Police Matter,MODERATE,594
+Non-Emergency Police Matter,SLOW,83
+Non-Residential Heat,FAST,25
+Non-Residential Heat,MODERATE,27
+Non-Residential Heat,SLOW,3238
+NonCompliance with Phased Reopening,FAST,34194
+NonCompliance with Phased Reopening,MODERATE,7355
+NonCompliance with Phased Reopening,SLOW,24637
+OUTSIDE BUILDING,FAST,148
+OUTSIDE BUILDING,MODERATE,526
+OUTSIDE BUILDING,SLOW,5541
+Obstruction,FAST,30217
+Obstruction,MODERATE,28831
+Obstruction,SLOW,26235
+Oil or Gas Spill,FAST,5
+Oil or Gas Spill,MODERATE,12
+Oil or Gas Spill,SLOW,15
+Other Enforcement,FAST,1804
+Other Enforcement,MODERATE,3653
+Other Enforcement,SLOW,5788
+Outdoor Dining,FAST,2550
+Outdoor Dining,MODERATE,3469
+Outdoor Dining,SLOW,25772
+Overflowing Litter Baskets,FAST,1581
+Overflowing Litter Baskets,MODERATE,1974
+Overflowing Litter Baskets,SLOW,600
+Overflowing Recycling Baskets,FAST,5
+Overflowing Recycling Baskets,MODERATE,8
+Overflowing Recycling Baskets,SLOW,4
+Overgrown Tree/Branches,FAST,15310
+Overgrown Tree/Branches,MODERATE,10812
+Overgrown Tree/Branches,SLOW,43120
+PAINT/PLASTER,FAST,16012
+PAINT/PLASTER,MODERATE,63156
+PAINT/PLASTER,SLOW,285650
+PLUMBING,FAST,20602
+PLUMBING,MODERATE,68898
+PLUMBING,SLOW,307547
+Paint/Plaster,FAST,162
+Paint/Plaster,MODERATE,366
+Paint/Plaster,SLOW,1148
+Panhandling,FAST,51739
+Panhandling,MODERATE,98
+Panhandling,SLOW,31
+Pet Sale,FAST,2
+Pet Sale,MODERATE,1
+Pet Sale,SLOW,66
+Plant,FAST,821
+Plant,MODERATE,11
+Plant,SLOW,5
+Plumbing,FAST,1386
+Plumbing,MODERATE,2164
+Plumbing,SLOW,15433
+Poison Ivy,MODERATE,5
+Poison Ivy,SLOW,635
+Posting Advertisement,FAST,655
+Posting Advertisement,MODERATE,1
+Private School Vaccine Mandate Non-Compliance,FAST,23
+Private School Vaccine Mandate Non-Compliance,MODERATE,195
+Private or Charter School Reopening,FAST,113
+Private or Charter School Reopening,MODERATE,87
+Private or Charter School Reopening,SLOW,933
+Public Payphone Complaint,FAST,44
+Public Payphone Complaint,MODERATE,36
+Public Payphone Complaint,SLOW,160
+Public Toilet,FAST,148
+Public Toilet,MODERATE,61
+Public Toilet,SLOW,54
+Quality of Life,SLOW,1
+Radioactive Material,FAST,12
+Radioactive Material,MODERATE,18
+Radioactive Material,SLOW,66
+Real Time Enforcement,FAST,9562
+Real Time Enforcement,MODERATE,4743
+Real Time Enforcement,SLOW,2250
+Recycling Basket Complaint,FAST,69
+Recycling Basket Complaint,MODERATE,149
+Recycling Basket Complaint,SLOW,230
+Recycling Enforcement,FAST,129
+Recycling Enforcement,MODERATE,197
+Recycling Enforcement,SLOW,308
+Request Large Bulky Item Collection,FAST,3156
+Request Large Bulky Item Collection,MODERATE,323831
+Request Large Bulky Item Collection,SLOW,303038
+Residential Disposal Complaint,FAST,22131
+Residential Disposal Complaint,MODERATE,23576
+Residential Disposal Complaint,SLOW,16091
+Retailer Complaint,FAST,11
+Retailer Complaint,MODERATE,17
+Retailer Complaint,SLOW,23
+Rodent,FAST,23933
+Rodent,MODERATE,18744
+Rodent,SLOW,44396
+Root/Sewer/Sidewalk Condition,FAST,1184
+Root/Sewer/Sidewalk Condition,MODERATE,933
+Root/Sewer/Sidewalk Condition,SLOW,26482
+SAFETY,FAST,2818
+SAFETY,MODERATE,12595
+SAFETY,SLOW,58839
+SRDE,FAST,1
+SRGOVG,SLOW,3
+Safety,FAST,11
+Safety,MODERATE,39
+Safety,SLOW,204
+Sanitation Condition,FAST,18843
+Sanitation Condition,MODERATE,24278
+Sanitation Condition,SLOW,12231
+Sanitation Worker or Vehicle Complaint,FAST,1276
+Sanitation Worker or Vehicle Complaint,MODERATE,3897
+Sanitation Worker or Vehicle Complaint,SLOW,9741
+Scaffold Safety,FAST,553
+Scaffold Safety,MODERATE,152
+Scaffold Safety,SLOW,107
+School Maintenance,FAST,1865
+School Maintenance,MODERATE,1037
+School Maintenance,SLOW,4414
+Seasonal Collection,FAST,113
+Seasonal Collection,MODERATE,249
+Seasonal Collection,SLOW,427
+Sewer,FAST,130096
+Sewer,MODERATE,23178
+Sewer,SLOW,25907
+Sewer Maintenance,FAST,7147
+Sewer Maintenance,MODERATE,1823
+Sewer Maintenance,SLOW,1769
+Sidewalk Condition,FAST,11290
+Sidewalk Condition,MODERATE,20060
+Sidewalk Condition,SLOW,132617
+Smoking,FAST,6
+Smoking,MODERATE,15
+Smoking,SLOW,1126
+Smoking or Vaping,FAST,48
+Smoking or Vaping,MODERATE,113
+Smoking or Vaping,SLOW,13920
+Snow,FAST,1664
+Snow,MODERATE,1324
+Snow,SLOW,5159
+Snow Removal,SLOW,83
+Snow or Ice,FAST,24289
+Snow or Ice,MODERATE,22235
+Snow or Ice,SLOW,33921
+Special Natural Area District (SNAD),FAST,14
+Special Natural Area District (SNAD),MODERATE,7
+Special Natural Area District (SNAD),SLOW,249
+Special Operations,FAST,18
+Special Operations,MODERATE,12
+Special Operations,SLOW,177
+Special Projects Inspection Team (SPIT),FAST,1594
+Special Projects Inspection Team (SPIT),MODERATE,1780
+Special Projects Inspection Team (SPIT),SLOW,17793
+Squeegee,FAST,217
+Squeegee,MODERATE,1
+Stalled Sites,MODERATE,1
+Standing Water,FAST,55
+Standing Water,MODERATE,127
+Standing Water,SLOW,528
+Storm,FAST,1487
+Storm,MODERATE,1059
+Storm,SLOW,183
+Street Condition,FAST,125803
+Street Condition,MODERATE,96339
+Street Condition,SLOW,131373
+Street Light Condition,FAST,27209
+Street Light Condition,MODERATE,23817
+Street Light Condition,SLOW,89447
+Street Sign - Damaged,FAST,4698
+Street Sign - Damaged,MODERATE,5788
+Street Sign - Damaged,SLOW,21474
+Street Sign - Dangling,FAST,1685
+Street Sign - Dangling,MODERATE,3914
+Street Sign - Dangling,SLOW,18039
+Street Sign - Missing,FAST,3892
+Street Sign - Missing,MODERATE,3918
+Street Sign - Missing,SLOW,16700
+Street Sweeping Complaint,FAST,5510
+Street Sweeping Complaint,MODERATE,9817
+Street Sweeping Complaint,SLOW,21933
+Sustainability Enforcement,MODERATE,1
+Sweeping/Inadequate,FAST,137
+Sweeping/Inadequate,MODERATE,174
+Sweeping/Inadequate,SLOW,158
+Sweeping/Missed,FAST,638
+Sweeping/Missed,MODERATE,794
+Sweeping/Missed,SLOW,952
+Tanning,MODERATE,1
+Tanning,SLOW,11
+Tattooing,SLOW,421
+Taxi Complaint,FAST,177
+Taxi Complaint,MODERATE,347
+Taxi Complaint,SLOW,25729
+Taxi Compliment,FAST,66
+Taxi Compliment,MODERATE,93
+Taxi Compliment,SLOW,380
+Taxi Licensee Complaint,MODERATE,1
+Taxi Licensee Complaint,SLOW,40
+Taxi Report,FAST,47
+Taxi Report,MODERATE,81
+Taxi Report,SLOW,483
+Traffic,FAST,42216
+Traffic,MODERATE,68
+Traffic,SLOW,9
+Traffic Signal Condition,FAST,185574
+Traffic Signal Condition,MODERATE,21261
+Traffic Signal Condition,SLOW,21415
+Transfer Station Complaint,FAST,18
+Transfer Station Complaint,MODERATE,19
+Transfer Station Complaint,SLOW,13
+Tunnel Condition,FAST,1
+UNSANITARY CONDITION,FAST,14601
+UNSANITARY CONDITION,MODERATE,74160
+UNSANITARY CONDITION,SLOW,600684
+Unleashed Dog,FAST,30
+Unleashed Dog,MODERATE,63
+Unleashed Dog,SLOW,603
+Unsanitary Animal Facility,FAST,1
+Unsanitary Animal Facility,MODERATE,1
+Unsanitary Animal Facility,SLOW,12
+Unsanitary Animal Pvt Property,FAST,1098
+Unsanitary Animal Pvt Property,MODERATE,1002
+Unsanitary Animal Pvt Property,SLOW,3304
+Unsanitary Condition,FAST,59
+Unsanitary Condition,MODERATE,209
+Unsanitary Condition,SLOW,807
+Unsanitary Pigeon Condition,FAST,585
+Unsanitary Pigeon Condition,MODERATE,647
+Unsanitary Pigeon Condition,SLOW,1673
+Unspecified,FAST,6
+Unspecified,MODERATE,7
+Unspecified,SLOW,29
+Unstable Building,FAST,30
+Unstable Building,MODERATE,19
+Unstable Building,SLOW,1
+Uprooted Stump,FAST,294
+Uprooted Stump,MODERATE,117
+Uprooted Stump,SLOW,636
+Urinating in Public,FAST,7724
+Urinating in Public,MODERATE,22
+Urinating in Public,SLOW,5
+Vacant Lot,FAST,293
+Vacant Lot,MODERATE,537
+Vacant Lot,SLOW,1611
+Vaccine Mandate Non-Compliance,FAST,52
+Vaccine Mandate Non-Compliance,MODERATE,7347
+Vending,FAST,4139
+Vending,MODERATE,10
+Vending,SLOW,8
+Vendor Enforcement,FAST,85469
+Vendor Enforcement,MODERATE,126
+Vendor Enforcement,SLOW,45
+Violation of Park Rules,FAST,27904
+Violation of Park Rules,MODERATE,352
+Violation of Park Rules,SLOW,734
+WATER LEAK,FAST,6283
+WATER LEAK,MODERATE,30178
+WATER LEAK,SLOW,213807
+Waste Water Treatment Plant,FAST,40
+Waste Water Treatment Plant,MODERATE,2
+Waste Water Treatment Plant,SLOW,1
+Water Conservation,FAST,17950
+Water Conservation,MODERATE,5546
+Water Conservation,SLOW,3514
+Water Drainage,FAST,2
+Water Drainage,MODERATE,5
+Water Drainage,SLOW,57
+Water Leak,FAST,111
+Water Leak,MODERATE,344
+Water Leak,SLOW,1794
+Water Maintenance,FAST,7618
+Water Maintenance,MODERATE,1728
+Water Maintenance,SLOW,3103
+Water Quality,FAST,2955
+Water Quality,MODERATE,1771
+Water Quality,SLOW,5243
+Water System,FAST,208548
+Water System,MODERATE,44994
+Water System,SLOW,75503
+Wayfinding,FAST,4
+Wayfinding,MODERATE,1
+Wayfinding,SLOW,39
+Window Guard,MODERATE,37
+Window Guard,SLOW,8
+Wood Pile Remaining,FAST,556
+Wood Pile Remaining,MODERATE,625
+Wood Pile Remaining,SLOW,2059
+X-Ray Machine/Equipment,FAST,25
+X-Ray Machine/Equipment,MODERATE,42
+X-Ray Machine/Equipment,SLOW,100
+ZTESTINT,FAST,6
