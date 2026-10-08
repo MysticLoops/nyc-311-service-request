@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NYC 311 Municipal Analytics</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+  <!-- Floating Chart Tooltip -->
+  <div id="chart-tooltip" class="chart-tooltip"></div>
+
+  <!-- Clean Top Navigation -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="#" class="brand">
+        <span class="brand-badge">NYC 311</span>
+        <span class="brand-title">Municipal Analytics</span>
+        <span class="brand-tagline">— Predictive Dispatch Engine</span>
+      </a>
+
+      <nav class="nav-links" role="tablist">
+        <button class="nav-tab active" data-view="1" role="tab">Overview</button>
+        <button class="nav-tab" data-view="2" role="tab">Borough Equity</button>
+        <button class="nav-tab" data-view="3" role="tab">Bottlenecks</button>
+        <button class="nav-tab" data-view="4" role="tab">Triage Simulator</button>
+        <button class="nav-tab" data-view="5" role="tab">Live Stream &amp; Audit</button>
+      </nav>
+
+      <div class="nav-meta">
+        <span class="status-dot" id="global-status-dot"></span>
+        <span id="global-status-text">20.6M Requests (2020–2026)</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Views -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- ====================================================================
+           VIEW 1: MACRO OVERVIEW
+           ==================================================================== -->
+      <section class="view-section active" data-view="1">
+        <div class="page-header">
+          <h1 class="page-title">NYC 311 Municipal Telemetry</h1>
+          <p class="page-subtitle">
+            Distributed aggregation across 20,631,296 citizen service requests over seven partition years (2020–2026).
+          </p>
+        </div>
+
+        <!-- 3 Big Primary Metrics -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="label">Total Ingested Volume</div>
+            <div class="value" id="kpi-total-requests">20,631,296</div>
+            <div class="subtext">Processed across 7 yearly HDFS partitions</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="label">Median Resolution Time</div>
+            <div class="value" id="kpi-median-turnaround">18.4 hrs</div>
+            <div class="subtext">75th percentile: <strong id="kpi-p75-turnaround">72.0 hrs</strong></div>
+          </div>
+
+          <div class="metric-card">
+            <div class="label">Rapid Turnaround (&lt; 24h)</div>
+            <div class="value" style="color: var(--status-green);" id="kpi-fast-pct">58.9%</div>
+            <div class="subtext">12.1M requests resolved within one day</div>
+          </div>
+        </div>
+
+        <!-- Resolution Velocity & Annual Growth -->
+        <div class="layout-2col">
+          <div class="content-box">
+            <div class="content-box-header">
+              <h3>Resolution Velocity Distribution</h3>
+              <p>7-Year Citywide Share</p>
+            </div>
+            <div id="velocity-distribution-chart-container">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <div class="content-box">
+            <div class="content-box-header">
+              <h3>Annual Ingestion Volume (2020–2026)</h3>
+              <p>Requests per year</p>
+            </div>
+            <div id="yearly-volume-chart-container">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- 24-Hour & Monthly Seasonality (Answers Professor Defense Question on Temporal Modeling) -->
+        <div class="layout-2col">
+          <div class="content-box">
+            <div class="content-box-header">
+              <h3>24-Hour Intake Seasonality</h3>
+              <p>Peak call volume at 09:00–12:00 (1.2M/hr)</p>
+            </div>
+            <div id="hourly-seasonality-chart-container">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <div class="content-box">
+            <div class="content-box-header">
+              <h3>Monthly Seasonal Surges</h3>
+              <p>Winter heating surge vs. summer noise peak</p>
+            </div>
+            <div id="monthly-seasonality-chart-container">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Annual Partitions Table -->
+        <div class="content-box">
+          <div class="content-box-header">
+            <h3>HDFS Dataset Partitions</h3>
+            <p>Annual breakdown</p>
+          </div>
+          <div class="table-responsive">
+            <table class="table-clean">
+              <thead>
+                <tr>
+                  <th>Partition Year</th>
+                  <th class="num">Volume</th>
+                  <th class="num">Average Resolution</th>
+                  <th class="num">Fast (&lt;24h)</th>
+                  <th class="num">Severe Breach (&gt;5d)</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>2020</strong></td>
+                  <td class="num">2,638,197</td>
+                  <td class="num">152.8 hrs</td>
+                  <td class="num">60.1%</td>
+                  <td class="num">25.8%</td>
+                  <td><span class="badge green">Complete</span></td>
+                </tr>
+                <tr>
+                  <td><strong>2021</strong></td>
+                  <td class="num">2,915,272</td>
+                  <td class="num">141.8 hrs</td>
+                  <td class="num">61.4%</td>
+                  <td class="num">24.9%</td>
+                  <td><span class="badge green">Complete</span></td>
+                </tr>
+                <tr>
+                  <td><strong>2022</strong></td>
+                  <td class="num">2,859,865</td>
+                  <td class="num">169.5 hrs</td>
+                  <td class="num">58.2%</td>
+                  <td class="num">27.3%</td>
+                  <td><span class="badge green">Complete</span></td>
+                </tr>
+                <tr>
+                  <td><strong>2023</strong></td>
+                  <td class="num">2,944,911</td>
+                  <td class="num">188.0 hrs</td>
+                  <td class="num">56.7%</td>
+                  <td class="num">28.9%</td>
+                  <td><span class="badge green">Complete</span></td>
+                </tr>
+                <tr>
+                  <td><strong>2024</strong></td>
+                  <td class="num">3,195,875</td>
+                  <td class="num">178.7 hrs</td>
+                  <td class="num">57.9%</td>
+                  <td class="num">27.6%</td>
+                  <td><span class="badge green">Complete</span></td>
+                </tr>
+                <tr>
+                  <td><strong>2025</strong></td>
+                  <td class="num">3,422,142</td>
+                  <td class="num">159.1 hrs</td>
+                  <td class="num">59.5%</td>
+                  <td class="num">26.2%</td>
+                  <td><span class="badge green">Complete</span></td>
+                </tr>
+                <tr>
+                  <td><strong>2026 (YTD)</strong></td>
+                  <td class="num">2,655,034</td>
+                  <td class="num">141.4 hrs</td>
+                  <td class="num">62.0%</td>
+                  <td class="num">24.1%</td>
+                  <td><span class="badge green">Active Ingestion</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           VIEW 2: BOROUGH EQUITY & ACCOUNTABILITY
+           ==================================================================== -->
+      <section class="view-section" data-view="2">
+        <div class="page-header">
+          <h1 class="page-title">Geographic Equity &amp; Accountability</h1>
+          <p class="page-subtitle">
+            Analyzing municipal turnaround disparities across the five boroughs against the citywide baseline (27.0% breach rate).
+          </p>
+        </div>
+
+        <!-- Key Equity Finding Narrative -->
+        <div class="callout-card alert-red">
+          <h4>Key Equity Disparity</h4>
+          <p>
+            Housing complaints (HPD) in the <strong>South Bronx</strong> record an average turnaround of <strong>328.6 hours</strong> with a <strong>57.1% SLA breach rate</strong> across 1.5M tickets. In contrast, NYPD Brooklyn complaints average <strong>2.1 hours</strong> (0.07% breach rate).
+          </p>
+        </div>
+
+        <!-- Borough Summary Cards -->
+        <div class="metrics-grid" id="borough-cards-container">
+          <!-- Rendered by JS -->
+        </div>
+
+        <!-- Filter Toolbar -->
+        <div class="filter-bar">
+          <div class="pill-group">
+            <button class="pill-btn borough-filter-pill active" data-borough="ALL">All Boroughs</button>
+            <button class="pill-btn borough-filter-pill" data-borough="BRONX">Bronx</button>
+            <button class="pill-btn borough-filter-pill" data-borough="BROOKLYN">Brooklyn</button>
+            <button class="pill-btn borough-filter-pill" data-borough="MANHATTAN">Manhattan</button>
+            <button class="pill-btn borough-filter-pill" data-borough="QUEENS">Queens</button>
+            <button class="pill-btn borough-filter-pill" data-borough="STATEN ISLAND">Staten Island</button>
+          </div>
+          <input type="text" id="equity-search-input" class="input-search" placeholder="Filter by agency (e.g. HPD, DOB, NYPD)...">
+        </div>
+
+        <!-- Disparity Table -->
+        <div class="content-box">
+          <div class="content-box-header">
+            <h3>Inter-Borough Agency Performance</h3>
+            <p>Historical volumes &amp; breach rates</p>
+          </div>
+          <div class="table-responsive">
+            <table class="table-clean">
+              <thead>
+                <tr>
+                  <th>Borough</th>
+                  <th>Agency</th>
+                  <th class="num">Volume</th>
+                  <th class="num">SLA Breach Rate</th>
+                  <th class="num">Average Turnaround</th>
+                  <th class="num">Delta vs City Baseline</th>
+                </tr>
+              </thead>
+              <tbody id="equity-table-body">
+                <!-- Rendered by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           VIEW 3: AGENCY BOTTLENECK EXPLORER
+           ==================================================================== -->
+      <section class="view-section" data-view="3">
+        <div class="page-header">
+          <h1 class="page-title">Operational Agency Bottlenecks</h1>
+          <p class="page-subtitle">
+            Evaluating citizen demand volume against turnaround friction across 25 major complaint categories.
+          </p>
+        </div>
+
+        <!-- 2D Scatter Matrix with Tooltip -->
+        <div class="content-box">
+          <div class="content-box-header">
+            <h3>Intake Volume vs. Average Turnaround (Hours)</h3>
+            <p>Hover over any bubble to inspect volume, latency, and breach severity</p>
+          </div>
+          <div id="scatter-chart-wrapper" style="margin-bottom: 24px;">
+            <!-- Rendered by JS SVG with interactive hover tooltips -->
+          </div>
+        </div>
+
+        <!-- Bottlenecks Table -->
+        <div class="content-box">
+          <div class="content-box-header">
+            <h3>Complaint Categories Ranked by Volume</h3>
+            <p>Turnaround latency and breach rates</p>
+          </div>
+          <div class="table-responsive">
+            <table class="table-clean">
+              <thead>
+                <tr>
+                  <th>Complaint Category</th>
+                  <th class="num">Intake Volume</th>
+                  <th class="num">Avg Turnaround</th>
+                  <th class="num">SLA Breach Rate</th>
+                </tr>
+              </thead>
+              <tbody id="bottleneck-table-body">
+                <!-- Rendered by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           VIEW 4: LIVE INTAKE TRIAGE SIMULATOR
+           ==================================================================== -->
+      <section class="view-section" data-view="4">
+        <div class="page-header">
+          <h1 class="page-title">Pre-Dispatch Intake Simulator</h1>
+          <p class="page-subtitle">
+            Real-time SLA breach probability evaluated at intake time using learned PySpark MLlib weights (Zero-Leakage Protocol).
+          </p>
+        </div>
+
+        <!-- Preset Chips -->
+        <div style="margin-bottom: 24px;">
+          <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">Scenario Presets:</div>
+          <div class="chip-group" id="scenario-presets-container">
+            <!-- Chips rendered by JS -->
+          </div>
+        </div>
+
+        <div class="sim-grid">
+          <!-- Input Form Box -->
+          <div class="content-box">
+            <div class="content-box-header">
+              <h3>Intake Parameters</h3>
+              <p>Pre-resolution attributes</p>
+            </div>
+            <form id="triage-form">
+              <div class="form-field">
+                <label class="form-label" for="triage-agency">Handling Agency</label>
+                <select id="triage-agency" class="form-select">
+                  <option value="HPD">HPD (Housing Preservation &amp; Development)</option>
+                  <option value="DOB">DOB (Department of Buildings)</option>
+                  <option value="DOT">DOT (Department of Transportation)</option>
+                  <option value="DSNY">DSNY (Sanitation)</option>
+                  <option value="DEP">DEP (Environmental Protection)</option>
+                  <option value="DPR">DPR (Parks &amp; Recreation)</option>
+                  <option value="NYPD">NYPD (Police Department)</option>
+                  <option value="DOHMH">DOHMH (Health &amp; Mental Hygiene)</option>
+                  <option value="TLC">TLC (Taxi &amp; Limousine)</option>
+                  <option value="DCWP">DCWP (Consumer Protection)</option>
+                  <option value="DHS">DHS (Homeless Services)</option>
+                  <option value="EDC">EDC (Economic Development)</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label class="form-label" for="triage-complaint">Complaint Category</label>
+                <select id="triage-complaint" class="form-select">
+                  <option value="HEAT/HOT WATER">HEAT/HOT WATER</option>
+                  <option value="Street Condition">Street Condition</option>
+                  <option value="UNSANITARY CONDITION">UNSANITARY CONDITION</option>
+                  <option value="PLUMBING">PLUMBING</option>
+                  <option value="DOOR/WINDOW">DOOR/WINDOW</option>
+                  <option value="WATER LEAK">WATER LEAK</option>
+                  <option value="PAINT/PLASTER">PAINT/PLASTER</option>
+                  <option value="Damaged Tree">Damaged Tree</option>
+                  <option value="Water System">Water System</option>
+                  <option value="Blocked Driveway">Blocked Driveway</option>
+                  <option value="Illegal Parking">Illegal Parking</option>
+                  <option value="Noise - Residential">Noise - Residential</option>
+                  <option value="Noise - Commercial">Noise - Commercial</option>
+                  <option value="OTHER">OTHER / Miscellaneous</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label class="form-label" for="triage-borough">Borough</label>
+                <select id="triage-borough" class="form-select">
+                  <option value="BRONX">Bronx (+0.38 baseline)</option>
+                  <option value="BROOKLYN">Brooklyn (-0.05 baseline)</option>
+                  <option value="MANHATTAN">Manhattan (+0.12 baseline)</option>
+                  <option value="QUEENS">Queens (-0.18 baseline)</option>
+                  <option value="STATEN ISLAND">Staten Island (-0.32 baseline)</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label class="form-label" for="triage-hour">Submission Hour</label>
+                <input type="range" id="triage-hour" min="0" max="23" value="14" class="form-range-input">
+                <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--text-muted); margin-top:4px;">
+                  <span>00:00</span>
+                  <span id="hour-val-display" style="color:var(--text-primary); font-weight:600;">14:00 (Day)</span>
+                  <span>23:00</span>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label class="form-label" for="triage-day">Day of Week</label>
+                <select id="triage-day" class="form-select">
+                  <option value="2">Monday</option>
+                  <option value="3">Tuesday</option>
+                  <option value="4">Wednesday</option>
+                  <option value="5">Thursday</option>
+                  <option value="6">Friday</option>
+                  <option value="7">Saturday (Weekend)</option>
+                  <option value="1">Sunday (Weekend)</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label class="form-label" for="triage-month">Intake Month</label>
+                <input type="range" id="triage-month" min="1" max="12" value="1" class="form-range-input">
+                <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--text-muted); margin-top:4px;">
+                  <span>Jan (1)</span>
+                  <span id="month-val-display" style="color:var(--text-primary); font-weight:600;">Month 1 (Winter)</span>
+                  <span>Dec (12)</span>
+                </div>
+              </div>
+
+              <div style="display:flex; align-items:center; gap:8px;">
+                <input type="checkbox" id="triage-weekend" style="accent-color: var(--accent);">
+                <label for="triage-weekend" style="font-size:13px; color:var(--text-secondary); cursor:pointer;">
+                  Explicit Weekend Flag (+0.35 factor)
+                </label>
+              </div>
+            </form>
+          </div>
+
+          <!-- Predictions & Attributions Box -->
+          <div>
+            <!-- Big Outcome Display -->
+            <div id="outcome-display-box" class="outcome-card severe">
+              <div style="font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px;">
+                MLlib Predictive Inference (ROC-AUC 0.9161)
+              </div>
+              <div id="outcome-headline" class="outcome-title">
+                Severe Delay Risk (&gt; 5 Days)
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 4px;">
+                <span style="color: var(--text-secondary);">Calculated Breach Probability:</span>
+                <span id="outcome-prob-value" style="font-weight: 700; font-family: var(--font-mono); color: var(--text-primary);">94.4%</span>
+              </div>
+              <div class="progress-track">
+                <div id="outcome-progress-fill" class="progress-bar" style="width: 94.4%; background-color: var(--status-red);"></div>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13px; color: var(--text-muted); margin-top: 12px;">
+                <span>Estimated Turnaround:</span>
+                <span id="outcome-turnaround-est" style="color: var(--text-primary); font-weight: 600;">72 – 360+ hours</span>
+              </div>
+            </div>
+
+            <!-- Attribution Breakdown -->
+            <div class="content-box">
+              <div class="content-box-header">
+                <h3>Top Risk Attributions</h3>
+                <p>Log-odds weights</p>
+              </div>
+              <div id="attribution-waterfall-container">
+                <!-- Rendered by JS -->
+              </div>
+              <div style="margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border-subtle); font-family: var(--font-mono); font-size: 12px; color: var(--text-muted);" id="formula-compact-display">
+                <!-- Formula rendered by JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           VIEW 5: LIVE STREAMING ENGINE & MODEL AUDIT
+           ==================================================================== -->
+      <section class="view-section" data-view="5">
+        <div class="page-header">
+          <h1 class="page-title">Live Ingestion Stream &amp; Model Audit</h1>
+          <p class="page-subtitle">
+            Real-time streaming ingestion from official NYC Open Data API / 2026 Partition dataset with dynamic MLlib risk scoring.
+          </p>
+        </div>
+
+        <!-- Live Streaming Engine Controls -->
+        <div class="content-box">
+          <div class="content-box-header">
+            <div>
+              <h3>Real-Time Data Streaming Pipeline</h3>
+              <p>Continuous intake scoring</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="status-dot" id="stream-status-dot"></span>
+              <span style="font-size: 13px; color: var(--text-secondary);" id="stream-status-label">Stream Ready</span>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+            <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+              <div>
+                <label class="form-label" style="margin-bottom: 4px;">Stream Source</label>
+                <select id="stream-source-select" class="form-select" style="min-width: 280px;">
+                  <option value="soda">Live NYC Open Data SODA REST API (Real Citizens)</option>
+                  <option value="chunk">HDFS 2026.tsv Partition Stream (2,655,034 Records)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="form-label" style="margin-bottom: 4px;">Stream Speed</label>
+                <select id="stream-speed-select" class="form-select" style="min-width: 160px;">
+                  <option value="2000">Normal (15 req/sec)</option>
+                  <option value="1000">Fast (30 req/sec)</option>
+                  <option value="300">Turbo (100 req/sec)</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 12px; align-items: flex-end;">
+              <button id="btn-stream-toggle" class="btn-action">
+                <span id="btn-stream-label">▶ Start Live Stream</span>
+              </button>
+              <button id="btn-stream-reset" class="btn-action btn-secondary">
+                <span>Reset Feed</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Real-Time Live Streaming Telemetry -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="label">Live Streamed Tickets</div>
+            <div class="value" id="stream-tel-count">0</div>
+            <div class="subtext" id="stream-tel-source">Awaiting stream start...</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="label">Processing Throughput</div>
+            <div class="value" id="stream-tel-throughput">0 rec/sec</div>
+            <div class="subtext">Dynamic MLlib inference latency: <span id="stream-tel-latency">0ms</span></div>
+          </div>
+
+          <div class="metric-card">
+            <div class="label">Live SLA Breach Rate</div>
+            <div class="value" style="color: var(--status-amber);" id="stream-tel-breach-rate">0.0%</div>
+            <div class="subtext"><span id="stream-tel-breach-count">0</span> severe delay risks flagged</div>
+          </div>
+        </div>
+
+        <!-- Zero-Leakage Feature Audit Table (Answers Professor Defense on Data Leakage) -->
+        <div class="content-box">
+          <div class="content-box-header">
+            <h3>Zero-Leakage Protocol &amp; Feature Audit</h3>
+            <p>Guaranteed elimination of target leakage in PySpark pipeline</p>
+          </div>
+          <div class="table-responsive">
+            <table class="table-clean">
+              <thead>
+                <tr>
+                  <th>Feature Name</th>
+                  <th>Feature Type</th>
+                  <th>Intake Available?</th>
+                  <th>Pipeline Action</th>
+                  <th>Rationale</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>agency</strong></td>
+                  <td>Categorical</td>
+                  <td><span class="badge green">YES</span></td>
+                  <td>StringIndexer ➔ OneHotEncoder</td>
+                  <td>Known at ticket creation time</td>
+                </tr>
+                <tr>
+                  <td><strong>complaint_type</strong></td>
+                  <td>Categorical (Top 30 + OTHER)</td>
+                  <td><span class="badge green">YES</span></td>
+                  <td>StringIndexer ➔ OneHotEncoder</td>
+                  <td>Citizen-selected problem category</td>
+                </tr>
+                <tr>
+                  <td><strong>borough</strong></td>
+                  <td>Categorical</td>
+                  <td><span class="badge green">YES</span></td>
+                  <td>StringIndexer ➔ OneHotEncoder</td>
+                  <td>Incident location borough</td>
+                </tr>
+                <tr>
+                  <td><strong>hour, day_of_week, month</strong></td>
+                  <td>Numerical / Temporal</td>
+                  <td><span class="badge green">YES</span></td>
+                  <td>VectorAssembler Scaling</td>
+                  <td>Submission timestamp attributes</td>
+                </tr>
+                <tr style="background: rgba(239, 68, 68, 0.04);">
+                  <td><strong>closed_date</strong></td>
+                  <td>Timestamp (Target Leakage)</td>
+                  <td><span class="badge red">NO (Post-Resolution)</span></td>
+                  <td><strong style="color: var(--status-red);">DROPPED STRICTLY</strong></td>
+                  <td>Occurs after ticket closure; would leak resolution duration</td>
+                </tr>
+                <tr style="background: rgba(239, 68, 68, 0.04);">
+                  <td><strong>status</strong></td>
+                  <td>Categorical ("Closed", "Pending")</td>
+                  <td><span class="badge red">NO (Post-Resolution)</span></td>
+                  <td><strong style="color: var(--status-red);">DROPPED STRICTLY</strong></td>
+                  <td>Reflects post-dispatch outcome</td>
+                </tr>
+                <tr style="background: rgba(239, 68, 68, 0.04);">
+                  <td><strong>resolution_description</strong></td>
+                  <td>Text (Agency Action)</td>
+                  <td><span class="badge red">NO (Post-Resolution)</span></td>
+                  <td><strong style="color: var(--status-red);">DROPPED STRICTLY</strong></td>
+                  <td>Only documented after agency dispatch/inspection</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Side-by-Side Model Verification Cards -->
+        <div class="layout-2col">
+          <div class="content-box">
+            <div class="content-box-header">
+              <h3>Person A: Binary SLA Breach Model</h3>
+              <span class="badge green">ROC-AUC: 0.9161</span>
+            </div>
+            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px;">
+              <strong>Algorithm:</strong> Distributed Logistic Regression<br>
+              <strong>Target:</strong> <code>label_binary</code> (&gt; 5 days turnaround breach)<br>
+              <strong>Pipeline:</strong> StringIndexer ➔ OneHotEncoder ➔ VectorAssembler ➔ LogisticRegression
+            </p>
+            <div style="font-size: 12px; color: var(--status-green);">
+              ✔ Evaluated on 20% held-out test partition with zero leakage.
+            </div>
+          </div>
+
+          <div class="content-box">
+            <div class="content-box-header">
+              <h3>Person B: Turnaround Velocity Model</h3>
+              <span class="badge green">Weighted F1: 0.7766</span>
+            </div>
+            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px;">
+              <strong>Algorithm:</strong> Distributed Random Forest Classifier (20 Trees, Depth 8)<br>
+              <strong>Target:</strong> <code>label_multiclass</code> (FAST vs MODERATE vs SLOW)<br>
+              <strong>Features:</strong> Agency, Complaint Category, Borough, Temporal interaction
+            </p>
+            <div style="font-size: 12px; color: var(--status-green);">
+              ✔ 20-Tree Ensemble staging across cluster memory.
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Streamed Tickets Feed Table -->
+        <div class="content-box">
+          <div class="content-box-header">
+            <h3>Live Intake Stream Feed</h3>
+            <p>Real-time scored tickets entering the pipeline</p>
+          </div>
+          <div class="table-responsive">
+            <table class="table-clean">
+              <thead>
+                <tr>
+                  <th>Ticket ID</th>
+                  <th>Agency</th>
+                  <th>Complaint Category</th>
+                  <th>Borough</th>
+                  <th class="num">Breach Probability</th>
+                  <th>Predicted Velocity</th>
+                  <th>Status Flag</th>
+                </tr>
+              </thead>
+              <tbody id="stream-tickets-table-body">
+                <tr>
+                  <td colspan="7" style="text-align:center; padding: 24px; color: var(--text-muted);">
+                    Click "▶ Start Live Stream" above to start live streaming and scoring tickets in real-time.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+      <div>NYC 311 Municipal Analytics &amp; Predictive Dispatch Engine</div>
+      <div style="font-family: var(--font-mono); font-size: 12px;">Apache HDFS • Apache Pig • Apache Hive • PySpark MLlib</div>
+    </div>
+  </footer>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
