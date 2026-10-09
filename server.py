@@ -196,14 +196,14 @@ def compute_mllib_inference(req: PredictionRequest) -> Dict[str, Any]:
     person_a_label = "SEVERE DELAY RISK" if is_breach else "ON-TIME TRAJECTORY"
 
     if prob_clamped > 55.0:
-        velocity_tier = "SLOW (> 5 days)"
+        velocity_tier = "SLOW (> 72 hours)"
         est_hours = "72 - 360+ hrs"
     elif prob_clamped > 25.0:
-        velocity_tier = "MODERATE (1–5 days)"
-        est_hours = "24 - 120 hrs"
+        velocity_tier = "MODERATE (24–72 hours)"
+        est_hours = "24 - 72 hrs"
     else:
         velocity_tier = "FAST (< 24 hours)"
-        est_hours = "0.5 - 18 hrs"
+        est_hours = "0.5 - 24 hrs"
 
     attributions = [
         {"feature": f"Agency Handler ({agency})", "weight": w_agency},

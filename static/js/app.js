@@ -787,7 +787,7 @@ function runTriageInference() {
 
   if (box && headline && probVal && fill && est) {
     box.className = `outcome-card ${isSevere ? 'severe' : 'ontime'}`;
-    headline.textContent = isSevere ? 'Severe Delay Risk (> 5 Days)' : 'On-Time Trajectory (< 5 Days)';
+    headline.textContent = isSevere ? 'Severe Delay Risk (> 72 Hours)' : 'On-Time Trajectory (≤ 72 Hours)';
     probVal.textContent = `${prob.toFixed(1)}%`;
     fill.style.width = `${prob}%`;
     fill.style.backgroundColor = isSevere ? 'var(--status-red)' : 'var(--status-green)';
@@ -795,9 +795,9 @@ function runTriageInference() {
     if (prob > 55) {
       est.textContent = '72 – 360+ hours (Slow)';
     } else if (prob > 25) {
-      est.textContent = '24 – 120 hours (Moderate)';
+      est.textContent = '24 – 72 hours (Moderate)';
     } else {
-      est.textContent = '0.5 – 18 hours (Fast)';
+      est.textContent = '0.5 – 24 hours (Fast)';
     }
   }
 
